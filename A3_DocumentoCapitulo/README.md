@@ -11,9 +11,9 @@ classDiagram
         -Capitulo capitulo
         -vector~Capitulo~ capitulos
         +Documento()
-        +Documento(string titulo, vector~Capitulo~ capitulos)
+        +Documento(const string& titulo, const vector~Capitulo~& capitulos)
         +~Documento()
-        +agregar_capitulo(Capitulo capitulo) void
+        +agregar_capitulo(const Capitulo& capitulo) void
         +cantidad_capitulos() int
         +imprimir() void
     }
@@ -21,7 +21,7 @@ classDiagram
         -int numero
         -string titulo
         +Capitulo()
-        +Capitulo(int numero, string titulo)
+        +Capitulo(int numero, const string& titulo)
         +~Capitulo()
         +get_numero() int
         +get_titulo() string
@@ -53,9 +53,9 @@ classDiagram
 - [ ] **1. Clase `Capitulo`.** Atributos privados `numero` (int) y `titulo` (string), con constructor vacío y con parámetros.
 - [ ] **2. Getters e `imprimir()`** de `Capitulo`.
 - [ ] **3. Clase `Documento`.** Atributos `titulo`, `Capitulo capitulo` y `vector<Capitulo> capitulos`, todos por valor.
-- [ ] **4. Constructor con parámetros.** Recibe `string` y `vector<Capitulo>`. *Pista: copia el vector y usa su primer elemento como capítulo inicial, validando que no esté vacío.*
+- [ ] **4. Constructor con parámetros.** Recibe `const string&` y `const vector<Capitulo>&`. *Pista: copia el vector y usa su primer elemento como capítulo inicial, validando que no esté vacío.*
 - [ ] **5. Destructor.** Imprime un mensaje con el título y la cantidad de capítulos. *Pista: no lleva ningún `delete`; explica en clase por qué.*
-- [ ] **6. `agregar_capitulo(Capitulo)`.** Añade un capítulo más al vector.
+- [ ] **6. `agregar_capitulo(const Capitulo&)`.** Añade un capítulo más al vector.
 - [ ] **7. `cantidad_capitulos()`.** Devuelve el tamaño del vector.
 - [ ] **8. `imprimir()`.** Muestra el título, el capítulo inicial y la lista completa. *Pista: aquí se accede con `.` porque son objetos, no punteros.*
 - [ ] **9. `main`.** Arma un `vector<Capitulo>` con 3 capítulos, construye el documento, agrega un cuarto e imprime.
