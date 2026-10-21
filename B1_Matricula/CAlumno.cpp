@@ -9,9 +9,7 @@ CAlumno::CAlumno() {
     this->m_CreditosAcumulados = 0;
 }
 
-CAlumno::CAlumno(TipoString pCodigo, TipoString pNombres,
-                 TipoString pApePaterno, TipoString pApeMaterno,
-                 TipoString pCuentaCorreo, TipoEntero pEdad,
+CAlumno::CAlumno(const TipoString& pCodigo, const TipoString& pNombres, const TipoString& pApePaterno, const TipoString& pApeMaterno, const TipoString& pCuentaCorreo, TipoEntero pEdad,
                  TipoEntero pCreditosAcumulados) {
     this->m_Codigo = pCodigo;
     this->m_Nombres = pNombres;
@@ -25,11 +23,11 @@ CAlumno::CAlumno(TipoString pCodigo, TipoString pNombres,
 CAlumno::~CAlumno() {
 }
 
-TipoString CAlumno::getCodigo()  { return m_Codigo; }
-TipoString CAlumno::getNombres() { return m_Nombres; }
-TipoEntero CAlumno::getCreditosAcumulados() { return m_CreditosAcumulados; }
+TipoString CAlumno::getCodigo() const { return m_Codigo; }
+TipoString CAlumno::getNombres() const { return m_Nombres; }
+TipoEntero CAlumno::getCreditosAcumulados() const { return m_CreditosAcumulados; }
 
-void CAlumno::imprimir() {
+void CAlumno::imprimir() const {
     cout << " Datos del Alumno" << endl;
     cout << " Codigo  : " << m_Codigo << endl;
     cout << " Nombres : " << m_Nombres << endl;

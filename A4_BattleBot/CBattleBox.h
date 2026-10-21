@@ -6,17 +6,15 @@
 #include "CRobot.h"
 #include "CObstaculo.h"
 
-using namespace std;
-
 class CBattleBox {
 private:
     TipoEntero m_Altura;
     TipoEntero m_Ancho;
     TipoEntero m_CantRobots;
     TipoEntero m_CantObstaculos;
-    vector<vector<TipoCaracter>> m_Plano;
-    vector<CRobot*>     m_Robots;       // agregacion
-    vector<CObstaculo*> m_Obstaculos;   // agregacion
+    std::vector<std::vector<TipoCaracter>> m_Plano;
+    std::vector<CRobot*>     m_Robots;       // agregacion
+    std::vector<CObstaculo*> m_Obstaculos;   // agregacion
 
 public:
     CBattleBox();
@@ -25,12 +23,12 @@ public:
 
     void       adicionarRobot(CRobot* pRobot);
     void       adicionarObstaculo(CObstaculo* pObstaculo);
-    CRobot*    removerRobot(TipoString pNombre);
-    CRobot*    buscarRobot(TipoString nombre);
-    void       imprimirRobots();
-    TipoEntero getAltura();
-    TipoEntero getAncho();
-    TipoEntero getCantidadObjetos();
+    CRobot*    removerRobot(const TipoString& pNombre);
+    CRobot*    buscarRobot(const TipoString& nombre) const;
+    void       imprimirRobots() const;
+    TipoEntero getAltura() const;
+    TipoEntero getAncho() const;
+    TipoEntero getCantidadObjetos() const;
     void       dibujarBattleBox();
     void       actualizarBattleBox();
 };

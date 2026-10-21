@@ -2,24 +2,23 @@
 #define CURSO_H
 
 #include <string>
-using namespace std;
 
 class Curso {
 private:
-    string nombre;
-    string codigo;
+    std::string nombre;
+    std::string codigo;
 
 public:
     Curso();
-    Curso(string nombre, string codigo);
+    Curso(const std::string& nombre, const std::string& codigo);
     ~Curso();
 
-    void set_nombre(string nombre);
-    void set_codigo(string codigo);
-    string get_nombre();
-    string get_codigo();
+    void set_nombre(const std::string& nombre);
+    void set_codigo(const std::string& codigo);
+    std::string get_nombre() const;
+    std::string get_codigo() const;
 
-    void imprimir();
+    void imprimir() const;
 };
 
 #endif

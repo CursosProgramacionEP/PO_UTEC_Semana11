@@ -12,7 +12,7 @@ CRobot::CRobot() {
 
 // La coordenada se construye en la lista de inicializacion:
 // nace junto con el robot y muere con el.
-CRobot::CRobot(TipoString pNombre, TipoCaracter pColor,
+CRobot::CRobot(const TipoString& pNombre, TipoCaracter pColor,
                TipoEntero pPosX, TipoEntero pPosY)
     : m_Coordenada(pPosX, pPosY) {
     this->m_Nombre = pNombre;
@@ -21,7 +21,7 @@ CRobot::CRobot(TipoString pNombre, TipoCaracter pColor,
     this->m_Peso = 30;
 }
 
-CRobot::CRobot(TipoString pNombre, TipoCaracter pColor,
+CRobot::CRobot(const TipoString& pNombre, TipoCaracter pColor,
                TipoEntero pPosX, TipoEntero pPosY,
                TipoEntero pVidas, TipoEntero pPeso)
     : m_Coordenada(pPosX, pPosY) {
@@ -35,7 +35,7 @@ CRobot::~CRobot() {
     cout << "Eliminandose el robot " << m_Nombre << endl;
 }
 
-void CRobot::setNombre(TipoString pNombre) { this->m_Nombre = pNombre; }
+void CRobot::setNombre(const TipoString& pNombre) { this->m_Nombre = pNombre; }
 void CRobot::setVidas(TipoEntero pVidas)   { this->m_Vidas = pVidas; }
 
 void CRobot::moverse(TipoEntero pPosX, TipoEntero pPosY) {
@@ -59,13 +59,13 @@ void CRobot::Chocar(CObstaculo &pObstaculo) {
          << m_Vidas << ")" << endl;
 }
 
-TipoString   CRobot::getNombre() { return m_Nombre; }
-TipoEntero   CRobot::getPosX()   { return m_Coordenada.getPosX(); }
-TipoEntero   CRobot::getPosY()   { return m_Coordenada.getPosY(); }
-TipoCaracter CRobot::getColor()  { return m_Color; }
-TipoEntero   CRobot::getVidas()  { return m_Vidas; }
-TipoEntero   CRobot::getPeso()   { return m_Peso; }
+TipoString   CRobot::getNombre() const { return m_Nombre; }
+TipoEntero   CRobot::getPosX() const { return m_Coordenada.getPosX(); }
+TipoEntero   CRobot::getPosY() const { return m_Coordenada.getPosY(); }
+TipoCaracter CRobot::getColor() const { return m_Color; }
+TipoEntero   CRobot::getVidas() const { return m_Vidas; }
+TipoEntero   CRobot::getPeso() const { return m_Peso; }
 
-TipoString CRobot::mostrarPosicion() {
+TipoString CRobot::mostrarPosicion() const {
     return "(" + to_string(getPosX()) + ", " + to_string(getPosY()) + ")";
 }

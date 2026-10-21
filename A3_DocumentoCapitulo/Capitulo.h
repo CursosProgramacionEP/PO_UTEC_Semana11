@@ -2,24 +2,23 @@
 #define CAPITULO_H
 
 #include <string>
-using namespace std;
 
 class Capitulo {
 private:
     int numero;
-    string titulo;
+    std::string titulo;
 
 public:
     Capitulo();
-    Capitulo(int numero, string titulo);
+    Capitulo(int numero, const std::string& titulo);
     ~Capitulo();
 
     void set_numero(int numero);
-    void set_titulo(string titulo);
-    int get_numero();
-    string get_titulo();
+    void set_titulo(const std::string& titulo);
+    int get_numero() const;
+    std::string get_titulo() const;
 
-    void imprimir();
+    void imprimir() const;
 };
 
 #endif

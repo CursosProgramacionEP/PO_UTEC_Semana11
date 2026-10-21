@@ -11,14 +11,14 @@ private:
 
 public:
     CLaboratorio();
-    CLaboratorio(TipoString pCodigo, TipoEntero pNroPiso,
+    CLaboratorio(const TipoString& pCodigo, TipoEntero pNroPiso,
                  TipoEntero pNroComputadoras);
     ~CLaboratorio();
 
-    TipoString getCodigo();
-    TipoEntero getNroComputadoras();
+    TipoString getCodigo() const;
+    TipoEntero getNroComputadoras() const;
 
-    void imprimir();
+    void imprimir() const;
 };
 
 #endif

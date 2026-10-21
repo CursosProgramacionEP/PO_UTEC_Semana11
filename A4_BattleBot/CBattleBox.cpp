@@ -37,7 +37,7 @@ void CBattleBox::adicionarObstaculo(CObstaculo* pObstaculo) {
 
 // Saca el robot del tablero y devuelve su puntero para que
 // el main decida que hacer con el. No se hace delete aqui.
-CRobot* CBattleBox::removerRobot(TipoString pNombre) {
+CRobot* CBattleBox::removerRobot(const TipoString& pNombre) {
     for (int i = 0; i < (int)m_Robots.size(); ++i) {
         if (m_Robots[i]->getNombre() == pNombre) {
             CRobot* encontrado = m_Robots[i];
@@ -49,7 +49,7 @@ CRobot* CBattleBox::removerRobot(TipoString pNombre) {
     return nullptr;
 }
 
-CRobot* CBattleBox::buscarRobot(TipoString nombre) {
+CRobot* CBattleBox::buscarRobot(const TipoString& nombre) const {
     for (int i = 0; i < (int)m_Robots.size(); ++i) {
         if (m_Robots[i]->getNombre() == nombre) {
             return m_Robots[i];
@@ -58,7 +58,7 @@ CRobot* CBattleBox::buscarRobot(TipoString nombre) {
     return nullptr;
 }
 
-void CBattleBox::imprimirRobots() {
+void CBattleBox::imprimirRobots() const {
     cout << "Robots en el BattleBox (" << m_CantRobots << "):" << endl;
     for (int i = 0; i < (int)m_Robots.size(); ++i) {
         cout << "  " << m_Robots[i]->getColor() << " "
@@ -69,10 +69,10 @@ void CBattleBox::imprimirRobots() {
     }
 }
 
-TipoEntero CBattleBox::getAltura() { return m_Altura; }
-TipoEntero CBattleBox::getAncho()  { return m_Ancho; }
+TipoEntero CBattleBox::getAltura() const { return m_Altura; }
+TipoEntero CBattleBox::getAncho() const { return m_Ancho; }
 
-TipoEntero CBattleBox::getCantidadObjetos() {
+TipoEntero CBattleBox::getCantidadObjetos() const {
     return m_CantRobots + m_CantObstaculos;
 }
 

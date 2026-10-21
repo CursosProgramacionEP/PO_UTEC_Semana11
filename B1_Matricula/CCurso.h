@@ -13,16 +13,15 @@ private:
 
 public:
     CCurso();
-    CCurso(TipoString pCodigo, TipoString pNombre,
-           TipoString pPreRequisito, TipoEntero pCiclo,
+    CCurso(const TipoString& pCodigo, const TipoString& pNombre, const TipoString& pPreRequisito, TipoEntero pCiclo,
            TipoEntero pCreditos);
     ~CCurso();
 
-    TipoString getCodigo();
-    TipoString getNombre();
-    TipoEntero getCreditos();
+    TipoString getCodigo() const;
+    TipoString getNombre() const;
+    TipoEntero getCreditos() const;
 
-    void imprimir();
+    void imprimir() const;
 };
 
 #endif

@@ -15,26 +15,26 @@ private:
 
 public:
     CRobot();
-    CRobot(TipoString pNombre, TipoCaracter pColor,
+    CRobot(const TipoString& pNombre, TipoCaracter pColor,
            TipoEntero pPosX, TipoEntero pPosY);
-    CRobot(TipoString pNombre, TipoCaracter pColor,
+    CRobot(const TipoString& pNombre, TipoCaracter pColor,
            TipoEntero pPosX, TipoEntero pPosY,
            TipoEntero pVidas, TipoEntero pPeso);
     virtual ~CRobot();
 
-    void setNombre(TipoString pNombre);
+    void setNombre(const TipoString& pNombre);
     void setVidas(TipoEntero pVidas);
     void moverse(TipoEntero pPosX, TipoEntero pPosY);
     void golpear(CRobot &pEnemigo);
     void Chocar(CObstaculo &pObstaculo);
 
-    TipoString   getNombre();
-    TipoEntero   getPosX();
-    TipoEntero   getPosY();
-    TipoCaracter getColor();
-    TipoEntero   getVidas();
-    TipoEntero   getPeso();
-    TipoString   mostrarPosicion();
+    TipoString   getNombre() const;
+    TipoEntero   getPosX() const;
+    TipoEntero   getPosY() const;
+    TipoCaracter getColor() const;
+    TipoEntero   getVidas() const;
+    TipoEntero   getPeso() const;
+    TipoString   mostrarPosicion() const;
 };
 
 #endif

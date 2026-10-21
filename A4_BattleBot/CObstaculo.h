@@ -13,15 +13,15 @@ private:
 
 public:
     CObstaculo();
-    CObstaculo(TipoString pNombre, TipoCaracter pSimbolo,
+    CObstaculo(const TipoString& pNombre, TipoCaracter pSimbolo,
                TipoEntero pPosX, TipoEntero pPosY, TipoEntero pDureza);
     virtual ~CObstaculo();
 
-    TipoString   getNombre();
-    TipoCaracter getSimbolo();
-    TipoEntero   getPosX();
-    TipoEntero   getPosY();
-    TipoEntero   getDureza();
+    TipoString   getNombre() const;
+    TipoCaracter getSimbolo() const;
+    TipoEntero   getPosX() const;
+    TipoEntero   getPosY() const;
+    TipoEntero   getDureza() const;
 };
 
 #endif

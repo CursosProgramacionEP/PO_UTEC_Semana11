@@ -15,17 +15,15 @@ private:
 
 public:
     CAlumno();
-    CAlumno(TipoString pCodigo, TipoString pNombres,
-            TipoString pApePaterno, TipoString pApeMaterno,
-            TipoString pCuentaCorreo, TipoEntero pEdad,
+    CAlumno(const TipoString& pCodigo, const TipoString& pNombres, const TipoString& pApePaterno, const TipoString& pApeMaterno, const TipoString& pCuentaCorreo, TipoEntero pEdad,
             TipoEntero pCreditosAcumulados);
     ~CAlumno();
 
-    TipoString getCodigo();
-    TipoString getNombres();
-    TipoEntero getCreditosAcumulados();
+    TipoString getCodigo() const;
+    TipoString getNombres() const;
+    TipoEntero getCreditosAcumulados() const;
 
-    void imprimir();
+    void imprimir() const;
 };
 
 #endif

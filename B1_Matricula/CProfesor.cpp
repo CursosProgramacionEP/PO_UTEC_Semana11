@@ -7,9 +7,7 @@ CProfesor::CProfesor() {
     this->m_Codigo = "";
 }
 
-CProfesor::CProfesor(TipoString pCodigo, TipoString pNombres,
-                     TipoString pApePaterno, TipoString pApeMaterno,
-                     TipoString pCuentaCorreo) {
+CProfesor::CProfesor(const TipoString& pCodigo, const TipoString& pNombres, const TipoString& pApePaterno, const TipoString& pApeMaterno, const TipoString& pCuentaCorreo) {
     this->m_Codigo = pCodigo;
     this->m_Nombres = pNombres;
     this->m_ApePaterno = pApePaterno;
@@ -20,10 +18,10 @@ CProfesor::CProfesor(TipoString pCodigo, TipoString pNombres,
 CProfesor::~CProfesor() {
 }
 
-TipoString CProfesor::getCodigo()  { return m_Codigo; }
-TipoString CProfesor::getNombres() { return m_Nombres; }
+TipoString CProfesor::getCodigo() const { return m_Codigo; }
+TipoString CProfesor::getNombres() const { return m_Nombres; }
 
-void CProfesor::imprimir() {
+void CProfesor::imprimir() const {
     cout << "Datos del Profesor" << endl;
     cout << "Codigo  : " << m_Codigo << endl;
     cout << "Nombres : " << m_Nombres << endl;

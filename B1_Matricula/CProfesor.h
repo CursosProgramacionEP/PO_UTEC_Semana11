@@ -13,15 +13,13 @@ private:
 
 public:
     CProfesor();
-    CProfesor(TipoString pCodigo, TipoString pNombres,
-              TipoString pApePaterno, TipoString pApeMaterno,
-              TipoString pCuentaCorreo);
+    CProfesor(const TipoString& pCodigo, const TipoString& pNombres, const TipoString& pApePaterno, const TipoString& pApeMaterno, const TipoString& pCuentaCorreo);
     ~CProfesor();
 
-    TipoString getCodigo();
-    TipoString getNombres();
+    TipoString getCodigo() const;
+    TipoString getNombres() const;
 
-    void imprimir();
+    void imprimir() const;
 };
 
 #endif

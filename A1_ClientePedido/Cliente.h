@@ -3,26 +3,25 @@
 
 #include <string>
 #include "Pedido.h"
-using namespace std;
 
 class Cliente {
 private:
-    string nombre;
+    std::string nombre;
     Pedido* pedido;   // asociacion: el cliente conoce al pedido, no lo crea ni lo destruye
 
 public:
     Cliente();
-    Cliente(string nombre);
+    Cliente(const std::string& nombre);
     ~Cliente();
 
-    void set_nombre(string nombre);
-    string get_nombre();
+    void set_nombre(const std::string& nombre);
+    std::string get_nombre() const;
 
     void asociar_pedido(Pedido* pedido);
     void cancelar_pedido();
-    bool tiene_pedido();
+    bool tiene_pedido() const;
 
-    void imprimir();
+    void imprimir() const;
 };
 
 #endif

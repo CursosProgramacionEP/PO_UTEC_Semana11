@@ -1,12 +1,14 @@
 #include "Documento.h"
 #include <iostream>
 
+using namespace std;
+
 Documento::Documento() {
     this->titulo = "sin titulo";
 }
 
 // Los capitulos se copian dentro del documento: son parte de el.
-Documento::Documento(string titulo, vector<Capitulo> capitulos) {
+Documento::Documento(const string& titulo, const vector<Capitulo>& capitulos) {
     this->titulo = titulo;
     this->capitulos = capitulos;
     if (!capitulos.empty()) {
@@ -21,18 +23,18 @@ Documento::~Documento() {
          << " y sus " << capitulos.size() << " capitulos" << endl;
 }
 
-void Documento::set_titulo(string titulo) { this->titulo = titulo; }
-string Documento::get_titulo() { return titulo; }
+void Documento::set_titulo(const string& titulo) { this->titulo = titulo; }
+string Documento::get_titulo() const { return titulo; }
 
-void Documento::agregar_capitulo(Capitulo capitulo) {
+void Documento::agregar_capitulo(const Capitulo& capitulo) {
     capitulos.push_back(capitulo);
 }
 
-int Documento::cantidad_capitulos() {
+int Documento::cantidad_capitulos() const {
     return (int)capitulos.size();
 }
 
-void Documento::imprimir() {
+void Documento::imprimir() const {
     cout << "Documento: " << titulo << endl;
     cout << "  Capitulo inicial -> ";
     capitulo.imprimir();

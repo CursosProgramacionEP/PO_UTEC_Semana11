@@ -9,7 +9,7 @@ CLaboratorio::CLaboratorio() {
     this->m_NroComputadoras = 0;
 }
 
-CLaboratorio::CLaboratorio(TipoString pCodigo, TipoEntero pNroPiso,
+CLaboratorio::CLaboratorio(const TipoString& pCodigo, TipoEntero pNroPiso,
                            TipoEntero pNroComputadoras) {
     this->m_Codigo = pCodigo;
     this->m_NroPiso = pNroPiso;
@@ -19,10 +19,10 @@ CLaboratorio::CLaboratorio(TipoString pCodigo, TipoEntero pNroPiso,
 CLaboratorio::~CLaboratorio() {
 }
 
-TipoString CLaboratorio::getCodigo() { return m_Codigo; }
-TipoEntero CLaboratorio::getNroComputadoras() { return m_NroComputadoras; }
+TipoString CLaboratorio::getCodigo() const { return m_Codigo; }
+TipoEntero CLaboratorio::getNroComputadoras() const { return m_NroComputadoras; }
 
-void CLaboratorio::imprimir() {
+void CLaboratorio::imprimir() const {
     cout << "Datos del Laboratorio" << endl;
     cout << "Codigo : " << m_Codigo << endl;
     cout << "Numero Piso: " << m_NroPiso << endl;

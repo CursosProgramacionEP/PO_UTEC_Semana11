@@ -15,8 +15,8 @@ public:
 
     void setPosX(TipoEntero pPosX);
     void setPosY(TipoEntero pPosY);
-    TipoEntero getPosX();
-    TipoEntero getPosY();
+    TipoEntero getPosX() const;
+    TipoEntero getPosY() const;
 };
 
 #endif

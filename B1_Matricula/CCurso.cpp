@@ -9,8 +9,7 @@ CCurso::CCurso() {
     this->m_Creditos = 0;
 }
 
-CCurso::CCurso(TipoString pCodigo, TipoString pNombre,
-               TipoString pPreRequisito, TipoEntero pCiclo,
+CCurso::CCurso(const TipoString& pCodigo, const TipoString& pNombre, const TipoString& pPreRequisito, TipoEntero pCiclo,
                TipoEntero pCreditos) {
     this->m_Codigo = pCodigo;
     this->m_Nombre = pNombre;
@@ -22,11 +21,11 @@ CCurso::CCurso(TipoString pCodigo, TipoString pNombre,
 CCurso::~CCurso() {
 }
 
-TipoString CCurso::getCodigo()   { return m_Codigo; }
-TipoString CCurso::getNombre()   { return m_Nombre; }
-TipoEntero CCurso::getCreditos() { return m_Creditos; }
+TipoString CCurso::getCodigo() const { return m_Codigo; }
+TipoString CCurso::getNombre() const { return m_Nombre; }
+TipoEntero CCurso::getCreditos() const { return m_Creditos; }
 
-void CCurso::imprimir() {
+void CCurso::imprimir() const {
     cout << "Datos del Curso" << endl;
     cout << "Codigo : " << m_Codigo << endl;
     cout << "Nombre : " << m_Nombre << endl;

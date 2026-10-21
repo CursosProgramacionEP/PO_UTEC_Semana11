@@ -4,26 +4,25 @@
 #include <string>
 #include <vector>
 #include "Capitulo.h"
-using namespace std;
 
 class Documento {
 private:
-    string titulo;
+    std::string titulo;
     Capitulo capitulo;             // composicion: un capitulo que es parte del documento
-    vector<Capitulo> capitulos;    // composicion: los capitulos viven dentro del documento
+    std::vector<Capitulo> capitulos;   // composicion: los capitulos viven dentro del documento
 
 public:
     Documento();
-    Documento(string titulo, vector<Capitulo> capitulos);
+    Documento(const std::string& titulo, const std::vector<Capitulo>& capitulos);
     ~Documento();
 
-    void set_titulo(string titulo);
-    string get_titulo();
+    void set_titulo(const std::string& titulo);
+    std::string get_titulo() const;
 
-    void agregar_capitulo(Capitulo capitulo);
-    int cantidad_capitulos();
+    void agregar_capitulo(const Capitulo& capitulo);
+    int cantidad_capitulos() const;
 
-    void imprimir();
+    void imprimir() const;
 };
 
 #endif

@@ -5,26 +5,25 @@
 #include <vector>
 #include "Alumno.h"
 #include "Curso.h"
-using namespace std;
 
 class Universidad {
 private:
-    string nombre;
-    vector<Alumno*> alumnos;   // agregacion
-    vector<Curso*> cursos;     // agregacion
+    std::string nombre;
+    std::vector<Alumno*> alumnos;   // agregacion
+    std::vector<Curso*> cursos;     // agregacion
 
 public:
     Universidad();
-    Universidad(string nombre);
+    Universidad(const std::string& nombre);
     ~Universidad();
 
-    void set_nombre(string nombre);
-    string get_nombre();
+    void set_nombre(const std::string& nombre);
+    std::string get_nombre() const;
 
     void agregar_alumno(Alumno* alumno);
     void agregar_clase(Curso* curso);
-    void imprimir_alumno();
-    void imprimir_clase();
+    void imprimir_alumno() const;
+    void imprimir_clase() const;
 };
 
 #endif

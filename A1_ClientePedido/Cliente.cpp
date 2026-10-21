@@ -1,12 +1,14 @@
 #include "Cliente.h"
 #include <iostream>
 
+using namespace std;
+
 Cliente::Cliente() {
     this->nombre = "sin nombre";
     this->pedido = nullptr;
 }
 
-Cliente::Cliente(string nombre) {
+Cliente::Cliente(const string& nombre) {
     this->nombre = nombre;
     this->pedido = nullptr;
 }
@@ -17,8 +19,8 @@ Cliente::~Cliente() {
     cout << "Eliminandose el cliente " << nombre << endl;
 }
 
-void Cliente::set_nombre(string nombre) { this->nombre = nombre; }
-string Cliente::get_nombre() { return nombre; }
+void Cliente::set_nombre(const string& nombre) { this->nombre = nombre; }
+string Cliente::get_nombre() const { return nombre; }
 
 void Cliente::asociar_pedido(Pedido* pedido) {
     this->pedido = pedido;
@@ -29,11 +31,11 @@ void Cliente::cancelar_pedido() {
     this->pedido = nullptr;
 }
 
-bool Cliente::tiene_pedido() {
+bool Cliente::tiene_pedido() const {
     return pedido != nullptr;
 }
 
-void Cliente::imprimir() {
+void Cliente::imprimir() const {
     cout << "Cliente: " << nombre << endl;
     if (pedido != nullptr) {
         cout << "  ";

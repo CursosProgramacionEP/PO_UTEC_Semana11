@@ -1,5 +1,7 @@
 #include "CCoordenada.h"
 
+using namespace std;
+
 CCoordenada::CCoordenada() {
     this->m_PosX = 0;
     this->m_PosY = 0;
@@ -17,5 +19,5 @@ CCoordenada::~CCoordenada() {
 
 void CCoordenada::setPosX(TipoEntero pPosX) { this->m_PosX = pPosX; }
 void CCoordenada::setPosY(TipoEntero pPosY) { this->m_PosY = pPosY; }
-TipoEntero CCoordenada::getPosX() { return m_PosX; }
-TipoEntero CCoordenada::getPosY() { return m_PosY; }
+TipoEntero CCoordenada::getPosX() const { return m_PosX; }
+TipoEntero CCoordenada::getPosY() const { return m_PosY; }

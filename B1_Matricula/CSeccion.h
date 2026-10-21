@@ -8,14 +8,12 @@
 #include "CLaboratorio.h"
 #include "CAlumno.h"
 
-using namespace std;
-
 class CSeccion {
 private:
     CCurso*          m_Curso;         // una seccion tiene asignado un curso
     CProfesor*       m_Profesor;      // el profesor es parte de la seccion
     CLaboratorio*    m_Laboratorio;   // la seccion tiene asignado un laboratorio
-    vector<CAlumno*> m_ListaAlumno;   // a lo mas 25 alumnos registrados
+    std::vector<CAlumno*> m_ListaAlumno;   // a lo mas 25 alumnos registrados
     TipoEntero       m_Dia;
     TipoEntero       m_HoraInicio;
     TipoEntero       m_HoraFin;
@@ -35,11 +33,11 @@ public:
     void asignarHorario(TipoEntero pDia, TipoEntero pHoraInicio, TipoEntero pHoraFin);
 
     bool       matricularAlumno(CAlumno* pAlumno);
-    CAlumno*   buscarAlumno(TipoString pCodigo);
-    TipoEntero getNumeroMatriculados();
-    TipoString getNombreDia();
+    CAlumno*   buscarAlumno(const TipoString& pCodigo) const;
+    TipoEntero getNumeroMatriculados() const;
+    TipoString getNombreDia() const;
 
-    void imprimir();
+    void imprimir() const;
 };
 
 #endif

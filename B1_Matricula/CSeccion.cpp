@@ -56,7 +56,7 @@ bool CSeccion::matricularAlumno(CAlumno* pAlumno) {
     return true;
 }
 
-CAlumno* CSeccion::buscarAlumno(TipoString pCodigo) {
+CAlumno* CSeccion::buscarAlumno(const TipoString& pCodigo) const {
     for (int i = 0; i < (int)m_ListaAlumno.size(); ++i) {
         if (m_ListaAlumno[i]->getCodigo() == pCodigo) {
             return m_ListaAlumno[i];
@@ -65,9 +65,9 @@ CAlumno* CSeccion::buscarAlumno(TipoString pCodigo) {
     return nullptr;
 }
 
-TipoEntero CSeccion::getNumeroMatriculados() { return m_NumeroMatriculados; }
+TipoEntero CSeccion::getNumeroMatriculados() const { return m_NumeroMatriculados; }
 
-TipoString CSeccion::getNombreDia() {
+TipoString CSeccion::getNombreDia() const {
     switch (m_Dia) {
         case 1: return "Lunes";
         case 2: return "Martes";
@@ -79,7 +79,7 @@ TipoString CSeccion::getNombreDia() {
     }
 }
 
-void CSeccion::imprimir() {
+void CSeccion::imprimir() const {
     cout << "Datos de la seccion" << endl;
 
     if (m_Curso != nullptr)        m_Curso->imprimir();
